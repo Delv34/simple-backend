@@ -1,0 +1,17 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: db_container
+    environment:
+      POSTGRES_USER: golang
+      POSTGRES_PASSWORD: 12345
+      POSTGRES_DB: simple_go
+      PGDATA: /var/lib/posgresql/data/pgdata
+    ports:
+      - "5430:5432"
+    volumes:
+      - ./database/pgdata:/var/lib/posgresql/data/pgdata
+
+volumes:
+  pgdata:
+    driver: local

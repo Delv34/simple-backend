@@ -1,0 +1,19 @@
+services:
+  db:
+    image: mysql
+    container_name: mysql_container
+    restart: always
+    environment:
+      MYSQL_USER: golang
+      MYSQL_PASSWORD: 12345
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: go_simple
+      # PGDATA: /var/lib/posgresql/data/pgdata
+    ports:
+      - "3306:3306"
+    # volumes:
+    #   - ./database/pgdata:/var/lib/posgresql/data/pgdata
+
+# volumes:
+#   pgdata:
+#     driver: local
